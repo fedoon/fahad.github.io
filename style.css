@@ -1,0 +1,38 @@
+#kfupmlogo{
+	width:600px;
+	height:120px;
+	align:left;
+}
+#loginField{ 
+	border-color:#89dbf9;
+	height:300;
+	width:290;
+	padding:0;
+}
+#headerRow{
+	border-color: white;
+	border-bottom-color: black;
+}
+#tCol{
+	width:300px;
+}
+table{
+	width:100%;
+	height:100%;
+	border-collapse: collapse;
+}
+body{background-color: #dedfe0;}
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 10px 30px;
+	text-align: center;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+th{border-top: 1px solid black; border-bottom: 1px solid black;}
+td{border-bottom: 1px solid black;}
+#rightCol{border-left: 1px solid black; width:300px}
