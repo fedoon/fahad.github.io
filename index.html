@@ -11,19 +11,19 @@
 <body>
     <div class="mt-3" style="clear:both;"></div>
     <div class="container">
-            <div class="jumbotron ">
+            <div class="jumbotron">
                     <div class="row justify-content-center">
                             <img src="assets/img/kfupm-logos.png" class="img-fluid mx-auto d-block" style="max-width: 50%" alt="KFUPM LOGO">
                     </div>
                     <hr class="my-4">
                     <div id="verfif" class="row justify-content-center">
-                            <form>
+                            <form action="">
                                     <div class="">
                                           <div id="alert" class="alert alert-danger" role="alert">
                                                 <p id="war"></p>
                                           </div>
                                           <div class="form-group">
-                                              <label for="name">Name </label>
+                                              <label for="name">Name</label>
                                               <input type="text" class="form-control" id="name" placeholder="Name" required>
                                           </div>
                                           <div class="form-group">
@@ -46,45 +46,73 @@
                                     </div>
                                     <div class="d-flex justify-content-center">
                                       <button type="reset"  class="btn btn-dark mr-2">Reset</button>
-                                      <button type="submit" class="btn btn-primary">Start</button>
+                                      <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                   </form>
                     </div>
                 
                   </div>
     </div>
- 
+    <div class="modal" id="modalT" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Start Quiz</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Click the button to start the quiz</p>
+            </div>
+            <div class="modal-footer">
+                    <a id="location" href="">
+                                <button type="button" class="btn btn-primary">Start</button>
+
+                    </a>
+            </div>
+          </div>
+        </div>
+      </div>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script>
+       $('#alert').css('display','none')
 
-$('#alert').css('display','none')
+$( document ).ready(function() {
+var selectedQ = 1;
+$('#quiz1').change(function (){
+        selectedQ = 1;
+})
+$('#quiz2').change(function (){
+        selectedQ = 2;
+})
+$('#quiz3').change(function (){
+        selectedQ = 3;
+})
 
+$(document).on('submit',function(){
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var valid =  re.test(String(email).toLowerCase());
+    if (valid){
+       trigger()
+    }else {
+        $("#war").text("Must enter a valid email")
+        $('#alert').css('display','block')
+    }
+    return false;
+});
 
-        var selectedQ = 1;
-        $('#quiz1').change(function (){
-                selectedQ = 1;
-        })
-        $('#quiz2').change(function (){
-                selectedQ = 2;
-        })
-        $('#quiz3').change(function (){
-                selectedQ = 3;
-        })
-        $(document).on('submit',function(){
-            var name = $("#name").val();
-            var email = $("#email").val();
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            var valid =  re.test(String(email).toLowerCase());
-            if (valid){
-                window.location.replace('quiz'+selectedQ+'.html');
-            }else {
-                $("#war").text("Must enter a valid email")
-                $('#alert').css('display','block')
+function trigger() {
+        $("#location").attr("href", "quiz"+selectedQ+".html")
+        $('#modalT').modal({
+                show: true
+         })
+}
+});
 
-            }
-           
-        });
     </script>
 </body>
 </html>
