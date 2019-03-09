@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KFUPM Online Quizez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container-fluid">
+        
+            <div >
+                    <div class="">
+                            <img src="assets/img/kfupm-logos.png" class="img-fluid mx-auto d-block" style="max-width: 50%" alt="KFUPM LOGO">
+                    </div>
+                    <div class="row">    
+                            <div id="admin-sidebar" class="col-md-2 p-x-0 p-y-3">
+                                <ul class="sidenav  list-unstyled  mt-3" id="qoustionsList">
+                                        <li class="page-item active" id="navq0">
+                                          <a class="page-link"  onclick="select(0);">1</a>
+                                         </li>
+                                          <li class="page-item" id="navq1">
+                                            <a class="page-link"  onclick="select(1);">2</a>
+                                          </li>
+                                          <li class="page-item" id="navq2">
+                                              <a class="page-link"  onclick="select(2);">3</a>
+                                          </li>
+                                          <li class="page-item" id="navq3">
+                                                <a class="page-link"  onclick="select(3);">4</a>
+                                          </li>
+                                            <li class="page-item" id="navq4">
+                                                    <a class="page-link"  onclick="select(4);">5</a>
+                                            </li>
+                                            <li class="page-item" id="navq5">
+                                                    <a class="page-link"   onclick="select(5);">6</a>
+                                            </li>
+                                            <li class="page-item disabled"  id="navq6">
+                                                    <a class="page-link"  onclick="select(6);">7</a>
+                                            </li>
+                                            <li class="page-item disabled" id="navq7">
+                                                    <a class="page-link"  onclick="select(7);">8</a>
+                                            </li>
+                                            <li class="page-item disabled" id="navq8">
+                                                    <a class="page-link"  onclick="select(8);">9</a>
+                                            </li>
+                                            <li class="page-item disabled" id="navq9">
+                                                    <a class="page-link"  onclick="select(9);">10</a>
+                                            </li>
+                                        </ul>
+                            </div> <!-- /#admin-sidebar -->
+                            <div id="admin-main-control" class="jumbotron col-md-7">
+                                <div id="result1" class=" d-flex justify-content-center">
+
+                                </div>
+                                <div id="result" class="d-flex justify-content-center mt-3">
+                      
+                                  </div>
+                                  
+                            <div id="questionDiv" name="questionDiv" class="row-fluid  " align="center">
+                                <p>
+                                        <div class="mx-auto">
+                                                <h3 id="questionTitle">
+                                                </h3>
+                                            </div>
+                                            <div id="questionAnswers" class="">
+                                             
+                                            </div>
+                                </p>
+                         
+                            </div>
+                            </div> <!-- /#admin-main-control -->
+                        </div> <!-- /.row -->
+
+                    <hr class="my-4">
+
+                    <div class="row justify-content-center">
+                            <p class="lead">
+                                    <div id="countdown"></div>                                    
+                            </p>
+                    </div>
+                  </div>
+    </div>
+    
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js" integrity="sha256-oSgtFCCmHWRPQ/JmR4OoZ3Xke1Pw4v50uh6pLcu+fIc=" crossorigin="anonymous"></script>
+    <script src="assets/js/quiz2.js"></script>
+
+
+
+
+</body>
+</html>
